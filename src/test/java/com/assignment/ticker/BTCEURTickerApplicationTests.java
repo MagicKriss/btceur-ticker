@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class BtcConverterApplicationTests {
+public class BTCEURTickerApplicationTests {
 
 	@Test
 	public void contextLoads() {

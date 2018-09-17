@@ -6,7 +6,6 @@ import com.assignment.ticker.model.LatestPrice;
 import com.assignment.ticker.repository.PriceRepository;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -16,8 +15,7 @@ public class ScheduledTasks {
     private static final Logger log = LoggerFactory.getLogger(ScheduledTasks.class);
     @Autowired
     private PriceRepository repository;
-    @Autowired
-    private Environment env;
+
 
     @Scheduled(fixedRateString = "${scheduling.time}")
     public void saveLatestPrice() {
