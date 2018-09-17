@@ -1,4 +1,4 @@
-package com.assignment.ticker.Model;
+package com.assignment.ticker.model;
 
 import javafx.util.Pair;
 

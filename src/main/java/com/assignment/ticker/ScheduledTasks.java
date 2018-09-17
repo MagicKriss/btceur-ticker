@@ -1,8 +1,8 @@
 package com.assignment.ticker;
 
-import com.assignment.ticker.Model.Price;
+import com.assignment.ticker.model.Price;
 import org.slf4j.Logger;
-import com.assignment.ticker.Model.LatestPrice;
+import com.assignment.ticker.model.LatestPrice;
 import com.assignment.ticker.repository.PriceRepository;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

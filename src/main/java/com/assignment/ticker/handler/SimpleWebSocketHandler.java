@@ -1,7 +1,7 @@
 package com.assignment.ticker.handler;
 
-import com.assignment.ticker.Model.CoinBasePayload;
-import com.assignment.ticker.Model.LatestPrice;
+import com.assignment.ticker.model.CoinBasePayload;
+import com.assignment.ticker.model.LatestPrice;
 import com.sun.xml.internal.ws.client.ClientTransportException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -52,7 +52,7 @@ public class SimpleWebSocketHandler implements WebSocketHandler {
 
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus) throws Exception {
-        log.info("Connection is closed");
+        log.info("Connection is closed with reason " + closeStatus.getReason());
     }
 
     @Override
