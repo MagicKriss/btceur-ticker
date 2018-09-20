@@ -1,27 +1,38 @@
 package com.assignment.ticker.model;
 
-import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "btc_price_in_eur")
 public class Price {
 
     @Id
-    private ObjectId _id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID", unique = true, nullable = false)
+    private int id;
+
+    @Column(name = "CreatedAt", unique = true)
+    private LocalDateTime createdAt;
+
+    @Column(name = "Price")
     private Float price;
-    private int timestamp;
+
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+    }
 
     public Price(Float price) {
-        this._id = ObjectId.get();
         this.price = price;
-        this.timestamp = this._id.getTimestamp();
     }
 
-    public String get_id() {
-        return _id.toHexString();
+    public int getId() {
+        return id;
     }
 
-    public void set_id(ObjectId _id) {
-        this._id = _id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Float getPrice() {
@@ -32,12 +43,12 @@ public class Price {
         this.price = price;
     }
 
-    public int getTimestamp() {
-        return timestamp;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setTimestamp(int timestamp) {
-        this.timestamp = timestamp;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }
 

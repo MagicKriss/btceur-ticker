@@ -1,0 +1,8 @@
+CREATE DATABASE coinbase_timeseries;
+USE coinbase_timeseries;
+
+CREATE TABLE btc_price_in_eur(
+ ID INT UNIQUE KEY NOT NULL,
+ CreatedAt  TIMESTAMP(3) UNIQUE NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+ Price FLOAT NOT NULL
+ );

@@ -1,7 +1,8 @@
 package com.assignment.ticker.repository;
 
-import com.assignment.ticker.model.Price;
-import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface PriceRepository extends MongoRepository<Price, String> {
+import com.assignment.ticker.model.Price;
+import org.springframework.data.repository.CrudRepository;
+
+public interface PriceRepository extends CrudRepository<Price, String> {
 }
