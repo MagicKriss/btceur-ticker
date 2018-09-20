@@ -1,7 +1,7 @@
 package com.assignment.ticker.model;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 @Entity
 @Table(name = "btc_price_in_eur")
@@ -13,14 +13,14 @@ public class Price {
     private int id;
 
     @Column(name = "CreatedAt", unique = true)
-    private LocalDateTime createdAt;
+    private ZonedDateTime createdAt;
 
     @Column(name = "Price")
     private Float price;
 
     @PrePersist
     protected void onCreate() {
-        createdAt = LocalDateTime.now();
+        createdAt = ZonedDateTime.now();
     }
 
     public Price(Float price) {
@@ -43,11 +43,11 @@ public class Price {
         this.price = price;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public ZonedDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(ZonedDateTime createdAt) {
         this.createdAt = createdAt;
     }
 }
